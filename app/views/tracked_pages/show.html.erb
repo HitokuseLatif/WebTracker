@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @tracked_page.homepageURL %>
+</p>
+
+<p>
+  <strong>Page URL:</strong>
+  <%= @tracked_page.pageURL %>
+</p>
+
+<p>
+  <strong>Total PV:</strong>
+  <%= @tracked_page.pageViews %>
+</p>
+
+<%= link_to 'Edit', edit_tracked_page_path(@tracked_page) %> |
+<%= link_to 'Back', tracked_pages_path %>

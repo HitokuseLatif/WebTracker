@@ -1,0 +1,51 @@
+<%= trackHelper() %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true  %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Tracked Data</h1>
+
+<table class="sortTable table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Client IP</th>
+      <th>Domain</th>
+      <th>Page URL</th>
+      <th>Date Viewed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracked_data.each do |tracked_datum| %>
+      <tr>
+        <td><%= tracked_datum.clientIP %></td>
+        <td><%= tracked_datum.homepageURL %></td>
+        <td><%= tracked_datum.pageURL %></td>
+        <td class="TP" id="timeTrackedTimestamp"><%= tracked_datum.updated_at %></td> <!-- make more readable -->
+        <td><%= link_to 'Show', tracked_datum %></td>
+        <td><%= link_to 'Edit', edit_tracked_datum_path(tracked_datum) %></td>
+        <td><%= link_to 'Destroy', tracked_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+<br>
+
+<label>Only show records from X hours ago:</label>
+<%= form_for :tracked_data, method: :get do |f| -%>
+  <%= number_field_tag 'hour' %>
+<% end %>
+
+<br>
+<br>
+<br>
+
+<%= link_to 'Back', welcome_index_path %>
+<br>
+<%= link_to 'List of Tracked Webpages', tracked_pages_path %>
+<br>
+<%= link_to 'New Tracked Datum', new_tracked_datum_path %>

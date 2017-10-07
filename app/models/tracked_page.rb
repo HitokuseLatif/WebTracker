@@ -1,0 +1,2 @@
+class TrackedPage < ApplicationRecord
+end

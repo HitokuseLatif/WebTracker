@@ -1,0 +1,2 @@
+module TrackedPagesHelper
+end

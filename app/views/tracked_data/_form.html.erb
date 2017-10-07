@@ -1,0 +1,32 @@
+<%= form_with(model: tracked_datum, local: true) do |form| %>
+  <% if tracked_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tracked_datum.errors.count, "error") %> prohibited this tracked_datum from being saved:</h2>
+
+      <ul>
+      <% tracked_datum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :clientIP %>
+    <%= form.text_field :clientIP, id: :tracked_datum_clientIP %>
+  </div>
+
+  <div class="field">
+    <%= form.label :homepageURL %>
+    <%= form.text_field :homepageURL, id: :tracked_datum_homepageURL %>
+  </div>
+
+    <div class="field">
+    <%= form.label :pageURL %>
+    <%= form.text_field :pageURL, id: :tracked_datum_pageURL %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

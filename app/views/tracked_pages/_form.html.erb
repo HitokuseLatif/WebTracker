@@ -1,0 +1,32 @@
+<%= form_with(model: tracked_page, local: true) do |form| %>
+  <% if tracked_page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tracked_page.errors.count, "error") %> prohibited this tracked_page from being saved:</h2>
+
+      <ul>
+      <% tracked_page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :homepageURL %>
+    <%= form.text_field :homepageURL, id: :tracked_page_homepageURL %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pageURL %>
+    <%= form.text_field :pageURL, id: :tracked_page_pageURL %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pageViews %>
+    <%= form.number_field :pageViews, id: :tracked_page_pageViews %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+<%= trackHelper() %>
+<p id="notice"><%= notice %></p>
+
+<h1>Tracked Pages</h1>
+
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Domain</th>
+      <th>Page URL</th>
+      <th>Page Views</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracked_pages.each do |tracked_page| %>
+      <tr>
+        <td><%= tracked_page.homepageURL %></td>
+        <td><%= tracked_page.pageURL %></td>
+        <td><%= tracked_page.pageViews %></td>
+        <td><%= link_to 'Show', tracked_page %></td>
+        <td><%= link_to 'Edit', edit_tracked_page_path(tracked_page) %></td>
+        <td><%= link_to 'Destroy', tracked_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+<br>
+
+<label>Only show records from X hours ago:</label>
+<%= form_for :tracked_pages, method: :get do |f| -%>
+  <%= number_field_tag 'hour' %>
+<% end %>
+
+<%= link_to 'Back to List of Tracked Data', tracked_data_path %>
+<br>
+<%= link_to 'List of Tracked Websites', tracked_sites_path %>
+<br>
+<%= link_to 'New Tracked Page', new_tracked_page_path %>

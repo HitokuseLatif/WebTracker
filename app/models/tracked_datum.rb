@@ -1,0 +1,2 @@
+class TrackedDatum < ApplicationRecord
+end

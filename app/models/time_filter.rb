@@ -1,0 +1,2 @@
+class TimeFilter < ApplicationRecord
+end

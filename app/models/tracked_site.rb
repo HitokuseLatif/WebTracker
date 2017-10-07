@@ -1,0 +1,2 @@
+class TrackedSite < ApplicationRecord
+end

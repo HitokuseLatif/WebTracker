@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  homepageURL: MyString
+  totalPV: 1
+  pageURL: MyString
+  pageViews: 1
+
+two:
+  homepageURL: MyString
+  totalPV: 1
+  pageURL: MyString
+  pageViews: 1

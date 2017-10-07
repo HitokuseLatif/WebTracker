@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client IP:</strong>
+  <%= @tracked_datum.clientIP %>
+</p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @tracked_datum.homepageURL %>
+</p>
+
+<p>
+  <strong>Page URL:</strong>
+  <%= @tracked_datum.pageURL %>
+</p>
+
+<p>
+  <strong>Date Viewed:</strong>
+  <%= @tracked_datum.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_tracked_datum_path(@tracked_datum) %> |
+<%= link_to 'Back', tracked_data_path %>

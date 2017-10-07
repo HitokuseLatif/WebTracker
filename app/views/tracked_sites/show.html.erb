@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Homepageurl:</strong>
+  <%= @tracked_site.homepageURL %>
+</p>
+
+<p>
+  <strong>Totalpv:</strong>
+  <%= @tracked_site.totalPV %>
+</p>
+
+<%= link_to 'Edit', edit_tracked_site_path(@tracked_site) %> |
+<%= link_to 'Back', tracked_sites_path %>
